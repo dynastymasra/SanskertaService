@@ -8,15 +8,18 @@ import sbt._
 object CommonSettings {
   val projectSettings = Seq(
     scalaVersion := Dependencies.scala,
-    organization := "sanskerta.dynastymasra.area",
+    organization := "id.co.dynastymasra.sanskerta",
     resolvers ++= Dependencies.resolvers,
     crossPaths := false,
     sbtPlugin := true,
+    fork in Test := true,
     parallelExecution in Test := false,
     scalaSource in Compile := baseDirectory.value / "src/main/scala",
     scalaSource in Test := baseDirectory.value / "src/test/scala",
     resourceDirectory in Compile := baseDirectory.value / "src/main/resources",
     resourceDirectory in Test := baseDirectory.value / "src/test/resources",
+    sources in(Compile, doc) := Seq.empty,
+    publishArtifact in(Compile, packageDoc) := false,
 
     dockerRepository := Some("dynastymasra"),
     dockerBaseImage := "flangelier/scala:latest",
