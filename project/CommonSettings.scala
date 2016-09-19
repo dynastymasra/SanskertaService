@@ -8,7 +8,7 @@ import sbt._
 object CommonSettings {
   val projectSettings = Seq(
     scalaVersion := Dependencies.scala,
-    organization := "id.co.dynastymasra.sanskerta",
+    organization := "id.co.squarecode.dynastymasra",
     resolvers ++= Dependencies.resolvers,
     crossPaths := false,
     sbtPlugin := true,
