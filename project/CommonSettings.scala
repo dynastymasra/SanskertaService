@@ -20,6 +20,7 @@ object CommonSettings {
     resourceDirectory in Test := baseDirectory.value / "src/test/resources",
     sources in(Compile, doc) := Seq.empty,
     publishArtifact in(Compile, packageDoc) := false,
+    publishArtifact in Test := false,
 
     dockerRepository := Some("dynastymasra"),
     dockerBaseImage := "flangelier/scala:latest",

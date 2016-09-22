@@ -40,8 +40,8 @@ lazy val countrySettings = Seq(
 
 lazy val sanskerta = (project in file("."))
   .enablePlugins(DockerPlugin)
-  .aggregate(common)
-  .dependsOn(common)
+  .aggregate(common, country)
+  .dependsOn(common, country)
 
 lazy val common = (
     BaseProject("Common")

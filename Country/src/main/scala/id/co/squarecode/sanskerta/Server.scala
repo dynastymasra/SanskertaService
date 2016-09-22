@@ -18,25 +18,29 @@ import org.slf4j.LoggerFactory
   * LinkedIn : http://www.linkedin.com/in/dynastymasra
   * Backend Developer
   */
-object App extends App {
+object Server extends App {
   val logger = Logger(LoggerFactory.getLogger(this.getClass))
 
   val config = ConfigFactory.load("application.conf").getConfig("app")
   val host = config.getString("host")
   val port = config.getInt("port")
 
-  logger.info(s"Start server user host:$host port:$port")
-  logger.info("Server user running...")
-
-  val service = new AreaService$FinagleService(new AreaController, new TCompactProtocol.Factory)
   val address = new InetSocketAddress(host, port)
 
-  ServerBuilder()
-    .keepAlive(true)
-    .logChannelActivity(true)
-    .codec(ThriftServerFramedCodec())
-    .bindTo(address)
-    .name("AreaService")
-    .build(service)
+  logger.info(s"Start server user host:$host port:$port")
+  serve(address)
+  logger.info("Server area running...")
 
+  def serve(address: InetSocketAddress) = {
+    val protocol = new TCompactProtocol.Factory()
+    val service = new AreaService$FinagleService(new AreaController, protocol)
+
+    ServerBuilder()
+      .keepAlive(true)
+      .logChannelActivity(true)
+      .codec(ThriftServerFramedCodec(protocol))
+      .bindTo(address)
+      .name("AreaService")
+      .build(service)
+  }
 }
