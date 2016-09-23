@@ -17,8 +17,9 @@ run: clean-thrift
 	sbt run
 
 test-local: clean-thrift
-	sbt coverage test
+	sbt clean coverage test coverageAggregate
 	sbt coverageReport
+	sbt coverageAggregate
 
 build:
 	sbt docker:publishLocal

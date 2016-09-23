@@ -6,7 +6,7 @@ object Dependencies {
 
   lazy val versions = new {
     val finagle = "6.37.0"
-    val scrooge = "4.7.0"
+    val scrooge = "4.10.0"
     val libthrift = "0.9.3"
     val scalatest = "3.0.0"
     val junit = "4.12"
