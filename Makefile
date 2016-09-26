@@ -12,10 +12,6 @@ gen-thrift:
 
 thrift-clean-gen: clean-thrift gen-thrift
 
-run: clean-thrift
-	sbt clean
-	sbt run
-
 test-local: clean-thrift
 	sbt clean coverage test coverageAggregate
 	sbt coverageReport

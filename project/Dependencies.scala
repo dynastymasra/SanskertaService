@@ -5,13 +5,13 @@ object Dependencies {
   val versionApp = "1.0.0"
 
   lazy val versions = new {
-    val finagle = "6.37.0"
+    val finagle = "6.38.0"
     val scrooge = "4.10.0"
     val libthrift = "0.9.3"
     val scalatest = "3.0.0"
     val junit = "4.12"
     val config = "1.3.0"
-    val scalalogging = "3.4.0"
+    val scalalogging = "3.5.0"
     val logback = "1.1.7"
   }
 
@@ -28,12 +28,11 @@ object Dependencies {
 
   val logback = "ch.qos.logback" % "logback-classic" % versions.logback
   val libthrift = "org.apache.thrift" % "libthrift" % versions.libthrift
-  val scoorage = "com.twitter" %% "scrooge-core" % versions.scrooge
+  val scrooge = "com.twitter" %% "scrooge-core" % versions.scrooge
 
   object finagle {
     val core   = "com.twitter" %% "finagle-core" % versions.finagle
     val thrift = "com.twitter" %% "finagle-thrift" % versions.finagle
-    val mux    = "com.twitter" %% "finagle-thriftmux" % versions.finagle
   }
 
   object typesafe {
@@ -49,12 +48,11 @@ object Dependencies {
   val coreDependencies: Seq[ModuleID] = Seq(
     finagle.core,
     finagle.thrift,
-    finagle.mux,
     typesafe.config,
     typesafe.logging,
     logback,
     libthrift,
-    scoorage
+    scrooge
   )
 
   val testDependencies: Seq[ModuleID] = coreDependencies ++ Seq(

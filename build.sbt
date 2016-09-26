@@ -17,7 +17,7 @@ lazy val scoverageSettings = Seq(
   coverageEnabled in Test := true,
   coverageMinimum := 80,
   coverageFailOnMinimum := false,
-  coverageExcludedPackages := "<empty>;id.co.squarecode.common.*",
+  coverageExcludedPackages := "<empty>;id.co.squarecode.common.contract.*",
 
   scroogeThriftSourceFolder in Compile := baseDirectory.value / "../SanskertaThrift",
   scroogeThriftOutputFolder in Compile := baseDirectory.value / "../Common/src/main/scala"
