@@ -2,7 +2,7 @@
 
 [![Scala](https://img.shields.io/badge/scala-2.11.8-red.svg)](http://www.scala-lang.org/)
 [![Finagle](https://img.shields.io/badge/finagle-6.38.0-6B809C.svg)](https://twitter.github.io/finagle/)
-[![License](https://img.shields.io/badge/license-MIT-44897A.svg)](https://github.com/dynastymasra/SanskertaThrift/blob/master/LICENSE)
+[![License](https://img.shields.io/badge/license-MIT-44897A.svg)](https://github.com/dynastymasra/SanskertaService/blob/master/LICENSE)
 
 
 Service application for `Sanskerta`, use scala, finagle and scrooge for thrift connection. 
@@ -47,7 +47,7 @@ Use command `make` for run this application.
     
 ## Application Flag
 
-Application have `flag` to run, if not use flag application automate use config in file `application.conf`. 
+Application have `flag` to run, if not use flag application automatic use config in file `application.conf`. 
 
 
 
