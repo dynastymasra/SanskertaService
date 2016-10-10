@@ -8,7 +8,8 @@ import sbt._
 object CommonSettings {
   val projectSettings = Seq(
     scalaVersion := Dependencies.scala,
-    organization := "id.co.squarecode.dynastymasra",
+    version := "1.0.0",
+    organization := "id.dynastymasra.sanskerta",
     resolvers ++= Dependencies.resolvers,
     crossPaths := false,
     sbtPlugin := true,
@@ -32,7 +33,6 @@ object CommonSettings {
 
   def ServiceProject(name: String): Project = (
     BaseProject(name)
-      enablePlugins DockerPlugin
-      enablePlugins JavaAppPackaging
+      enablePlugins (DockerPlugin, JavaAppPackaging)
     )
 }

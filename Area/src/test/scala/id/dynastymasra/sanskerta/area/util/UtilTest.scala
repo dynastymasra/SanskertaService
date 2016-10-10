@@ -1,4 +1,4 @@
-package id.co.squarecode.sanskerta.util
+package id.dynastymasra.sanskerta.area.util
 
 import org.scalatest.{OptionValues, Inspectors, Matchers, FlatSpec}
 

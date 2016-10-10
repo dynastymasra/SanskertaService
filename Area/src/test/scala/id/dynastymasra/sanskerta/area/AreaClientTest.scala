@@ -1,4 +1,4 @@
-package id.co.squarecode.sanskerta
+package id.dynastymasra.sanskerta.area
 
 import java.net.InetSocketAddress
 import java.util.logging.Logger

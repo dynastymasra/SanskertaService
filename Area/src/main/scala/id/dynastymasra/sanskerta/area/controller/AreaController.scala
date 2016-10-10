@@ -1,8 +1,8 @@
-package id.co.squarecode.sanskerta.controller
+package id.dynastymasra.sanskerta.area.controller
 
 import com.twitter.util.Future
 import com.typesafe.scalalogging.Logger
-import id.co.squarecode.common.contract.area.AreaService
+import id.dynastymasra.sanskerta.common.contract.area.{AreaService, Country}
 import org.slf4j.LoggerFactory
 
 /**

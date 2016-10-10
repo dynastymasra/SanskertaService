@@ -1,4 +1,4 @@
-package id.co.squarecode.sanskerta
+package id.dynastymasra.sanskerta.area
 
 import java.net.InetSocketAddress
 
@@ -6,8 +6,8 @@ import com.twitter.finagle.builder.ServerBuilder
 import com.twitter.finagle.thrift.ThriftServerFramedCodec
 import com.typesafe.config.ConfigFactory
 import com.typesafe.scalalogging.Logger
-import id.co.squarecode.common.contract.area.AreaService$FinagleService
-import id.co.squarecode.sanskerta.controller.AreaController
+import id.dynastymasra.sanskerta.area.controller.AreaController
+import id.dynastymasra.sanskerta.common.contract.area.AreaService$FinagleService
 import org.apache.thrift.protocol.TCompactProtocol
 import org.slf4j.LoggerFactory
 

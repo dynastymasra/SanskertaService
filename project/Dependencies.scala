@@ -2,7 +2,6 @@ import sbt._
 
 object Dependencies {
   val scala = "2.11.8"
-  val versionApp = "1.0.0"
 
   lazy val versions = new {
     val finagle = "6.38.0"

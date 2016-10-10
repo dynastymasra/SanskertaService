@@ -1,8 +1,8 @@
-package id.co.squarecode.sanskerta.controller
+package id.dynastymasra.sanskerta.area.controller
 
 import com.twitter.util.Future
 import com.typesafe.scalalogging.Logger
-import id.co.squarecode.common.contract.area.{Country, CountryService, AreaService}
+import id.dynastymasra.sanskerta.common.contract.area.{Country, CountryService}
 import org.slf4j.LoggerFactory
 
 /**
@@ -15,6 +15,8 @@ import org.slf4j.LoggerFactory
 trait CountryController extends CountryService.FutureIface {
 
   val logger = Logger(LoggerFactory.getLogger(this.getClass))
+
+  override def create(country: Country): Future[Country] = ???
 
   override def createCountry(country: Country): Future[Country] = ???
 

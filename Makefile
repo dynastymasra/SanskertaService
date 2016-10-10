@@ -1,11 +1,9 @@
 SHELL := bash
 
-VERSION ?= latest
-
 .PHONY: clean-thrift gen-thrift thrift-clean-gen build test-local
 
 clean-thrift:
-	rm -rvf Common/src/main/scala/id/co/squarecode/common/contract
+	rm -rvf Common/src/main/scala/id/dynastymasra/sanskerta/common/contract
 
 gen-thrift:
 	sbt clean compile

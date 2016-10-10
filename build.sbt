@@ -5,8 +5,6 @@ import sbt._
 
 name := "Sanskerta"
 description := "Project Application Service for Sanskerta"
-version := versionApp
-scalaVersion := scala
 sourcesInBase := false
 
 ivyScala := ivyScala.value map {
@@ -17,32 +15,27 @@ lazy val scoverageSettings = Seq(
   coverageEnabled in Test := true,
   coverageMinimum := 80,
   coverageFailOnMinimum := false,
-  coverageExcludedPackages := "<empty>;id.co.squarecode.common.contract.*",
+  coverageExcludedPackages := "<empty>;id.dynastymasra.sanskerta.common.contract.*",
 
   scroogeThriftSourceFolder in Compile := baseDirectory.value / "../SanskertaThrift",
   scroogeThriftOutputFolder in Compile := baseDirectory.value / "../Common/src/main/scala"
 )
 
 lazy val commonSettings = Seq(
-  version := versionApp,
-
   libraryDependencies ++= testDependencies
 )
 
-lazy val countrySettings = Seq(
-  version := versionApp,
-
+lazy val areaSettings = Seq(
+  packageName in Docker := "sanskerta-area",
   maintainer := "Dimas Ragil T <dynastymasra@gmail.com>",
   dockerExposedPorts := Seq(7121),
-  version in Docker := versionApp,
 
   libraryDependencies ++= testDependencies
 )
 
 lazy val sanskerta = (project in file("."))
-  .enablePlugins(DockerPlugin)
-  .aggregate(common, country)
-  .dependsOn(common, country)
+  .aggregate(common, area)
+  .dependsOn(common, area)
 
 lazy val common = (
     BaseProject("Common")
@@ -50,8 +43,8 @@ lazy val common = (
       settings(commonSettings: _*)
   )
 
-lazy val country = (
-    ServiceProject("Country")
+lazy val area = (
+    ServiceProject("Area")
       settings(scoverageSettings: _*)
-      settings(countrySettings: _*)
+      settings(areaSettings: _*)
   ) dependsOn common

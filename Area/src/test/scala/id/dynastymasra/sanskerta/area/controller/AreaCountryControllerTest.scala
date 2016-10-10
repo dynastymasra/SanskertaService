@@ -1,4 +1,4 @@
-package id.co.squarecode.sanskerta.controller
+package id.dynastymasra.sanskerta.area.controller
 
 import java.net.InetSocketAddress
 
@@ -6,7 +6,8 @@ import com.twitter.util.Await
 import com.typesafe.config.ConfigFactory
 import id.co.squarecode.common.contract.area.AreaService$FinagleClient
 import id.co.squarecode.sanskerta.AreaClientTest
-import id.co.squarecode.sanskerta.util.UtilTest
+import id.dynastymasra.sanskerta.area.{AreaClientTest, Server}
+import id.dynastymasra.sanskerta.area.util.UtilTest
 import org.junit.runner.RunWith
 import org.scalatest.BeforeAndAfterAll
 import org.scalatest.junit.JUnitRunner
@@ -28,7 +29,7 @@ class AreaCountryControllerTest extends UtilTest with BeforeAndAfterAll {
     val host = config.getString("host")
     val port = config.getInt("port")
 
-    server = id.co.squarecode.sanskerta.Server.serve(new InetSocketAddress(host, port))
+    server = Server.serve(new InetSocketAddress(host, port))
     client = AreaClientTest.server(new InetSocketAddress(host, port))
   }
 
